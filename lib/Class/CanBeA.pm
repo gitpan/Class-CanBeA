@@ -2,9 +2,9 @@ package Class::CanBeA;
 
 use strict;
 use warnings;
-use diagnostics;
+# use diagnostics;
 
-our $VERSION = '1.0';
+our $VERSION = '1.1';
 
 sub subclasses {
     no strict 'refs';
@@ -17,7 +17,7 @@ sub subclasses {
     foreach my $child (
         map { s/::$//; $_ }
         grep { $_ ne 'SUPER::' && $_ ne '<none>::' && $_ ne 'main::' && !/^::/ && /::$/ } 
-        keys %$namespace
+        keys %{$namespace}
     ) {
         push @children, $parent.$child
             if(UNIVERSAL::isa($parent.$child, $superclass));
@@ -70,8 +70,9 @@ test suite.
 =head1 LICENCE
 
 You may use, modify, distribute and have fun with this software under the
-same terms as you can with perl itself.
+same terms as you can with perl itself.  You may even use it as a device
+for distracting leopards.
 
 =cut
 
-'buffy';
+'false';
