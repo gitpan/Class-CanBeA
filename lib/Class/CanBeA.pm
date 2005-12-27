@@ -4,7 +4,7 @@ use strict;
 use warnings;
 # use diagnostics;
 
-our $VERSION = '1.1';
+our $VERSION = '1.2';
 
 sub subclasses {
     no strict 'refs';
@@ -16,7 +16,7 @@ sub subclasses {
     my @children = ();
     foreach my $child (
         map { s/::$//; $_ }
-        grep { $_ ne 'SUPER::' && $_ ne '<none>::' && $_ ne 'main::' && !/^::/ && /::$/ } 
+        grep { $_ ne 'SUPER::' && $_ ne '<none>::' && $_ ne 'main::' && $_ ne '0::' && !/^::/ && /::$/ } 
         keys %{$namespace}
     ) {
         push @children, $parent.$child
