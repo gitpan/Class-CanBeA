@@ -1,11 +1,14 @@
 MANIFEST
 Makefile.PL
 README
-CHANGES
+CHANGELOG
 lib/Class/CanBeA.pm
 t/lib/Class/CanBeA/Daughter.pm
 t/lib/Class/CanBeA/Parent.pm
 t/lib/Class/CanBeA/Son.pm
 t/lib/Class/CanBeA/Grandchild.pm
 t/00_tests.t
-META.yml                                 Module meta-data (added by MakeMaker)
+t/pod-coverage.t
+t/pod.t
+META.yml                                 Module YAML meta-data (added by MakeMaker)
+META.json                                Module JSON meta-data (added by MakeMaker)
